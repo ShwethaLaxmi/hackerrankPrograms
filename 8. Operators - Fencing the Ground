@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int length, breath, Tlength, Tarea;
+    scanf("%d",&length);
+    scanf("%d",&breath);
+    Tlength=(length * breath);
+    Tarea=2* (length + breath);
+    printf("The required length is %d m\n",Tarea);
+    printf("The required area of carpet is %d sqm",Tlength);
+    return 0;
+}
