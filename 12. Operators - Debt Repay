@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+float p,t,r,am,tm,i,intrest;
+    scanf("%f%f%f",&p,&t,&r);
+    i=(p*t*r)/100;
+    am=i+p;
+    intrest=i*0.02;
+    tm=am-intrest;
+    printf("%.2f\n%.2f\n%.2f\n%.2f\n",i,am,intrest,tm);
+
+    return 0;
+}
