@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int main() {
+    char character;
+    scanf(" %c", &character);
+    printf("%d\n",character);
+
+    return 0;
+}
