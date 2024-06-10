@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int team,member,m,n;
+    scanf("%d%d",&member,&team);
+    m=member%team;
+    n=member/team;
+    printf("The number of friends in each team is %d and left out is %d",n,m);
+    
+   
+    return 0;
+}
