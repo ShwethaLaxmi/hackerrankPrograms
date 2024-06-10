@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    float num;
+    scanf("%f",&num);
+    int floornum = (int)floor(num);
+    int ceilnum = (int)ceil(num);
+    printf("%d\n%d\n%d\n",floornum,ceilnum,floornum);
+    
+   
+    return 0;
+}
