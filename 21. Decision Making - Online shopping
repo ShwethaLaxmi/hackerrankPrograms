@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int Flipkart_p,Flipkart_d,Flipkart_s;
+    int Snapdeal_p,Snapdeal_d,Snapdeal_s;
+    int Amazon_p,Amazon_d,Amazon_s,Flipkart_total,Snapdeal_total,Amazon_total;
+    scanf("%d%d%d%d%d%d%d%d%d",&Flipkart_p,&Flipkart_d,&Flipkart_s,&Snapdeal_p,&Snapdeal_d,&Snapdeal_s,&Amazon_p,&Amazon_d,&Amazon_s);
+    Flipkart_total=Flipkart_p*(100-Flipkart_d)/100+Flipkart_s;
+    Snapdeal_total=Snapdeal_p*(100-Snapdeal_d)/100+Snapdeal_s;
+    Amazon_total=Amazon_p*(100-Amazon_d)/100+Amazon_s;
+    printf("In Flipkart: Rs.%d\n",Flipkart_total);
+    printf("In Snapdeal: Rs.%d\n",Snapdeal_total);
+    printf("In Amazon: Rs.%d\n",Amazon_total);
+
+    
+    if (Flipkart_total <= Snapdeal_total && Flipkart_total <= Amazon_total) {
+        printf("Choose Flipkart\n");
+    } else if (Snapdeal_total <= Flipkart_total && Snapdeal_total <= Amazon_total) {
+        printf("Choose Snapdeal\n");
+    } else {
+        printf("Choose Amazon\n");
+    }
+
+    return 0;
+}
