@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void calculate_shares(int coins, int ben_share_percent, int blackbeard_share_percent, int *ben_share, int *blackbeard_share, int *other_pirates_share) {
+    *ben_share = coins * ben_share_percent / 100;
+    int remaining_coins = coins - *ben_share;
+    *blackbeard_share = remaining_coins * blackbeard_share_percent / 100;
+    remaining_coins -= *blackbeard_share;
+    *other_pirates_share = remaining_coins / 3;
+}
+
+int main() {
+    int coins, ben_share_percent, blackbeard_share_percent;
+    int ben_share, blackbeard_share, other_pirates_share;
+
+    scanf("%d", &coins);
+    scanf("%d", &ben_share_percent);
+    scanf("%d", &blackbeard_share_percent);
+
+    calculate_shares(coins, ben_share_percent, blackbeard_share_percent, &ben_share, &blackbeard_share, &other_pirates_share);
+
+    printf("%d\n", ben_share);
+    printf("%d\n", blackbeard_share);
+    printf("%d\n", other_pirates_share);
+
+   
