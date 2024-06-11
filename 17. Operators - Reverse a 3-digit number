@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int main() {
+    int num, reversedNum = 0;
+    scanf("%d",&num);
+    reversedNum += num % 10 * 100; 
+    num /= 10; 
+    reversedNum += num % 10 * 10; 
+    num /= 10;
+    reversedNum += num;
+    printf("%d\n", reversedNum);
+    return 0;
+}
