@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int calculate_tariff(int month, double rent_per_day, int number_of_days) {
+    if (month < 1 || month > 12) {
+        printf("Invalid Input\n");
+        return -1;
+    }
+    int peak_season_months[] = {4, 5, 6, 11, 12};
+    int is_peak_season = 0;
+    
+    for (int i = 0; i < 5; i++) {
+        if (month == peak_season_months[i]) {
+            is_peak_season = 1;
+            break;
+        }
+    }
+    
+    if (is_peak_season) {
+        rent_per_day *= 1.2;
+    }
+    
+    int total_tariff = rent_per_day * number_of_days;
+    return total_tariff;
+}
+
+int main() {
+    int month, number_of_days;
+    int rent_per_day;
+    scanf("%d", &month);
+    scanf("%d", &rent_per_day);
+    scanf("%d", &number_of_days);
+    
+    int total_tariff = calculate_tariff(month, rent_per_day, number_of_days);
+    
+    if (total_tariff != -1) {
+        printf("%d\n", total_tariff);
+    }
+    
+    return 0;
+}
