@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int d1,c1,d2,c2,totalD,totalC;
+    scanf("%d%d%d%d",&d1,&c1,&d2,&c2);
+    totalD= d1 + d2;
+    totalC= c1 + c2;
+    if (totalC >= 100) {
+        totalD += totalC / 100;
+        totalC %= 100;
+    }
+    printf("%d\n%d\n",totalD,totalC);
+
+    return 0;
+}
