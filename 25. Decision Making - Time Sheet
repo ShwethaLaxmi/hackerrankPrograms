@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int hours[7];
+    int dailyRate = 100;
+    int overtimeRate = 15;
+    double saturdayBonus = 1.25;
+    double sundayBonus = 1.50;
+    int totalSalary = 0;
+
+    for(int i = 0; i < 7; i++) {
+        scanf("%d", &hours[i]);
+    }
+
+    for(int i = 0; i < 7; i++) {
+        int dailyHours = hours[i];
+        int dailySalary = 0;
+        
+        if (dailyHours > 8) {
+            dailySalary = (8 * dailyRate) + ((dailyHours - 8) * (dailyRate + overtimeRate));
+        } else {
+            dailySalary = dailyHours * dailyRate;
+        }
+
+        if (i == 6) {
+            dailySalary *= saturdayBonus; 
+        } else if (i == 0) {
+            dailySalary *= sundayBonus; 
+        }
+
+        totalSalary += dailySalary;
+    }
+
+    printf("%d\n", totalSalary);
+
+    return 0;
+}
